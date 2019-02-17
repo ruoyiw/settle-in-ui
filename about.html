@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About You</title>
+    <link href="https://uploads-ssl.webflow.com/5b72c72379ce4e6d1872328d/5b7b5de9e41359291291d3fb_stl.png" rel="shortcut icon" type="image/x-icon">    
+    <link href="https://uploads-ssl.webflow.com/5b72c72379ce4e6d1872328d/5b7b5e4cbbb60bce2593d74e_stl_app.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/about.css">
+</head>
+<body>
+<div class="sidebar"></div>
+
+<div class="main">
+    <div class="title">About You</div>
+    <div class="introduction">
+        <p>We'd like you to add your contact information so we can keep track of who is entering data into our tool.</p>
+    <div>
+
+    <hr/>
+
+    <table>
+    <tbody>
+        <tr>
+        <td width="400" height="50">
+        <div class="form-group">
+            <label class="name" for="name">NAME</label>
+            <input class="form-control" type="text" placeholder="Name" id="name" />
+        </div>
+        </td>
+        <td width="400" height="50">
+        <div class="form-group">
+            <label class="email" for="email">EMAIL*</label>            
+            <small class="emailWarning" style="visibility:hidden;" > Please fill an email address.</small>
+            <input class="form-control" type="text" placeholder="Email" id="email" />
+        </div>
+        </td>
+        </tr>
+        <tr>
+        <td width="400" height="50">
+        <div class="form-group">
+            <label class="organisation" for="organisation">ORGANISATION</label>
+            <input class="form-control" type="text" placeholder="Organisation" id="organisation" />
+        </div>
+        </td>
+        <td width="400" height="50">
+        <div class="form-group">
+            <label class="role" for="role">ROLE</label>
+            <input class="form-control" type="text" placeholder="Role" id="role" />
+        </div>
+        </td>
+        </tr>
+    </tbody>
+    </table>
+    <button class="btn" type="submit" id="loadUser" onclick="loadUser()">Continue</button>
+</div>
+
+<div class="mockup">
+<div class="device2">
+    <img src="images/Device2.svg" alt="device2">
+</div>
+<div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="js/about.js"></script>
+
+</body>
+</html>

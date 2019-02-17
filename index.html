@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Settle In</title>
+    <link href="https://uploads-ssl.webflow.com/5b72c72379ce4e6d1872328d/5b7b5de9e41359291291d3fb_stl.png" rel="shortcut icon" type="image/x-icon">    
+    <link href="https://uploads-ssl.webflow.com/5b72c72379ce4e6d1872328d/5b7b5e4cbbb60bce2593d74e_stl_app.png" rel="apple-touch-icon">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!-- jQuery Modal -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+</head>
+<body>
+
+<div class="sidebar">
+    <div class="form-inline" id="step1">
+        <div class="stepNo">1</div>
+        <div class="stepText">Please settle the example scenario outlined.</div>
+        <div class="form-inline" id="step1Complete" style="display:none">
+            <svg id="completeSvg" width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.0033 24.0001C8.30301 24.001 4.80812 22.2947 2.53364 19.3753C0.259247 16.4559 -0.540531 12.6504 0.365183 9.06172C1.27174 5.47395 3.78231 2.5049 7.1704 1.01522C10.5575 -0.474464 14.4436 -0.317912 17.6995 1.4399C17.8926 1.53646 18.0829 1.64521 18.2704 1.76616C18.6941 2.02677 18.8273 2.58084 18.5695 3.00648C18.4438 3.21273 18.2413 3.35993 18.0069 3.41616C17.7716 3.47241 17.5241 3.4321 17.3198 3.30553C17.166 3.2146 17.0029 3.11522 16.8398 3.03366C13.971 1.48679 10.5349 1.40617 7.59685 2.81522C4.65877 4.22523 2.57172 6.95523 1.983 10.1604C1.39332 13.3666 2.37394 16.6601 4.61917 19.0217C6.86449 21.3843 10.1044 22.5289 13.336 22.1033C16.5666 21.6768 19.3989 19.7305 20.955 16.8675C22.5112 14.0045 22.6041 10.5684 21.2044 7.62555L12.4192 16.4108C12.2495 16.5814 12.018 16.678 11.7761 16.678C11.5351 16.678 11.3036 16.5814 11.1339 16.4108L7.51036 12.7872C7.15974 12.4347 7.15974 11.8638 7.51036 11.5104C7.68098 11.3388 7.91255 11.2432 8.15349 11.2432C8.39536 11.2432 8.62694 11.3388 8.79662 11.5104L11.776 14.4907L20.7789 5.4878C20.9748 5.29092 21.2495 5.19528 21.5251 5.22718C21.7998 5.25905 22.0464 5.41468 22.1917 5.65092C23.7048 8.08573 24.2973 10.9816 23.8623 13.8157C23.4264 16.6489 21.9911 19.2335 19.8161 21.101C17.6411 22.9694 14.87 23.9968 12.0029 23.9997L12.0033 24.0001Z" fill="#15191D"/>
+            </svg>
+            Completed
+        </div>
+    </div>
+    <div class="form-inline" id="step2">
+        <div class="stepNo">2</div>
+        <div class="stepText">Please change one variable that will affect the outcome.</div>
+        <div class="form-inline" id="step2Complete" style="display:none">
+            <svg id="completeSvg" width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.0033 24.0001C8.30301 24.001 4.80812 22.2947 2.53364 19.3753C0.259247 16.4559 -0.540531 12.6504 0.365183 9.06172C1.27174 5.47395 3.78231 2.5049 7.1704 1.01522C10.5575 -0.474464 14.4436 -0.317912 17.6995 1.4399C17.8926 1.53646 18.0829 1.64521 18.2704 1.76616C18.6941 2.02677 18.8273 2.58084 18.5695 3.00648C18.4438 3.21273 18.2413 3.35993 18.0069 3.41616C17.7716 3.47241 17.5241 3.4321 17.3198 3.30553C17.166 3.2146 17.0029 3.11522 16.8398 3.03366C13.971 1.48679 10.5349 1.40617 7.59685 2.81522C4.65877 4.22523 2.57172 6.95523 1.983 10.1604C1.39332 13.3666 2.37394 16.6601 4.61917 19.0217C6.86449 21.3843 10.1044 22.5289 13.336 22.1033C16.5666 21.6768 19.3989 19.7305 20.955 16.8675C22.5112 14.0045 22.6041 10.5684 21.2044 7.62555L12.4192 16.4108C12.2495 16.5814 12.018 16.678 11.7761 16.678C11.5351 16.678 11.3036 16.5814 11.1339 16.4108L7.51036 12.7872C7.15974 12.4347 7.15974 11.8638 7.51036 11.5104C7.68098 11.3388 7.91255 11.2432 8.15349 11.2432C8.39536 11.2432 8.62694 11.3388 8.79662 11.5104L11.776 14.4907L20.7789 5.4878C20.9748 5.29092 21.2495 5.19528 21.5251 5.22718C21.7998 5.25905 22.0464 5.41468 22.1917 5.65092C23.7048 8.08573 24.2973 10.9816 23.8623 13.8157C23.4264 16.6489 21.9911 19.2335 19.8161 21.101C17.6411 22.9694 14.87 23.9968 12.0029 23.9997L12.0033 24.0001Z" fill="#15191D"/>
+            </svg>
+            Completed
+        </div>
+    </div>
+    <div class="form-inline" id="step3">
+        <div class="stepNo">3</div>
+        <div class="stepText">Settle it again, save it, and do the next one.</div>
+        <div class="form-inline" id="step3Complete" style="display:none">
+            <svg id="completeSvg" width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.0033 24.0001C8.30301 24.001 4.80812 22.2947 2.53364 19.3753C0.259247 16.4559 -0.540531 12.6504 0.365183 9.06172C1.27174 5.47395 3.78231 2.5049 7.1704 1.01522C10.5575 -0.474464 14.4436 -0.317912 17.6995 1.4399C17.8926 1.53646 18.0829 1.64521 18.2704 1.76616C18.6941 2.02677 18.8273 2.58084 18.5695 3.00648C18.4438 3.21273 18.2413 3.35993 18.0069 3.41616C17.7716 3.47241 17.5241 3.4321 17.3198 3.30553C17.166 3.2146 17.0029 3.11522 16.8398 3.03366C13.971 1.48679 10.5349 1.40617 7.59685 2.81522C4.65877 4.22523 2.57172 6.95523 1.983 10.1604C1.39332 13.3666 2.37394 16.6601 4.61917 19.0217C6.86449 21.3843 10.1044 22.5289 13.336 22.1033C16.5666 21.6768 19.3989 19.7305 20.955 16.8675C22.5112 14.0045 22.6041 10.5684 21.2044 7.62555L12.4192 16.4108C12.2495 16.5814 12.018 16.678 11.7761 16.678C11.5351 16.678 11.3036 16.5814 11.1339 16.4108L7.51036 12.7872C7.15974 12.4347 7.15974 11.8638 7.51036 11.5104C7.68098 11.3388 7.91255 11.2432 8.15349 11.2432C8.39536 11.2432 8.62694 11.3388 8.79662 11.5104L11.776 14.4907L20.7789 5.4878C20.9748 5.29092 21.2495 5.19528 21.5251 5.22718C21.7998 5.25905 22.0464 5.41468 22.1917 5.65092C23.7048 8.08573 24.2973 10.9816 23.8623 13.8157C23.4264 16.6489 21.9911 19.2335 19.8161 21.101C17.6411 22.9694 14.87 23.9968 12.0029 23.9997L12.0033 24.0001Z" fill="#15191D"/>
+            </svg>
+            Completed
+        </div>
+    </div>
+</div>
+
+<div class="main">
+    <div class="title">Scenario <span id="scenarioNo"></span></div>
+    <div class="content">
+        <div id="scenario">
+            <div class="subtitle">RELATIONSHIP</div>
+            <hr/>
+            <div class="form-inline">
+                <p>
+                Party A and Party B have <select class="form-control scenario-input" id="children"></select>. 
+                The children are between the ages of <select class="form-control scenario-input" id="children_age"></select>.
+                Party A and Party B were together for <input class="form-control scenario-input" type="number" min="1" max="25" step="1" value="5" id="duration" /> years and separated six months ago.
+                Their combined assets net total $<input class="form-control scenario-input" type="number" min="50000" max="500000" step="5000" value="50000" id="total_assets" />.
+                </p>
+            </div>
+
+            <div class="subtitle">PARTY A</div>
+            <hr/>
+            <div class="form-inline">
+                <p>
+                Party A is <input class="form-control scenario-input" type="number" min="20" max="75" step="5" value="40" id="age_a" /> years old and is in <select class="form-control scenario-input" id="health_a"></select> health.
+                They take in a total of <input class="form-control scenario-input" type="number" min="0" max="250000" step="5000" value="50000" id="income_a" /> per year from work and/or government benefit payments and has <input class="form-control scenario-input" type="number" min="0" max="1000000" step="10000" value="40000" id="super_a" /> in superannuation.
+                During their relationship, they brought <input class="form-control scenario-input" type="number" min="0" max="1000000" step="10000" value="10000" id="prior_a" /> into the relationship, including pre-owned assets, gifts, and payments. 
+                They have <select class="form-control scenario-input" id="dependent_a"></select> who require <select class="form-control scenario-input" id="financial_assis_a"></select> financial assistance. 
+                </p>
+            </div>
+
+            <div class="subtitle">PARTY B</div>
+            <hr/>
+            <div class="form-inline">
+                <p>
+                Party B is <input class="form-control scenario-input" type="number" min="20" max="75" step="5" value="40" id="age_b" /> years old and is in <select class="form-control scenario-input" id="health_b"></select> health.
+                They take in a total of <input class="form-control scenario-input" type="number" min="0" max="250000" step="5000" value="50000" id="income_b" /> per year from work and/or government benefit payments and has <input class="form-control scenario-input" type="number" min="0" max="1000000" step="10000" value="40000" id="super_b" /> in superannuation.
+                During their relationship, they brought <input class="form-control scenario-input" type="number" min="0" max="1000000" step="10000" value="10000" id="prior_b" /> into the relationship, including pre-owned assets, gifts, and payments. 
+                They have <select class="form-control scenario-input" id="dependent_b"></select> who require <select class="form-control scenario-input" id="financial_assis_b"></select> financial assistance. 
+                </p>
+            </div>
+
+            <div class="subtitle">PARENTING RESPONSIBILITIES</div>
+            <hr/>
+            <div class="form-inline">
+            <p>
+            They've already decided that Party A will have <input class="form-control scenario-input" type="number" min="0" max="100" step="5" value="40" id="resp_a" />% and Party B <input class="form-control scenario-input" type="number" min="0" max="100" step="5" value="40" id="resp_b" />% of the childcare responsibilities
+            and <select class="form-control scenario-input" id="support_name"></select> will <select class="form-control scenario-input" id="support_result"></select> child support.
+            </p>
+            </div>
+        </div>
+        
+        <div class="form-inline" id="sliderContainer">
+            <div class="partyA">PARTY A<div><span id="partyAValue"></span></div></div>
+            <div>
+            <input type="range" min="0" max="100" value="50" step="1" class="slider" id="settleSlider" />
+            </div>
+            <div class="partyB">PARTY B<div><span id="partyBValue"></span></div></div>
+            <div>
+            <div class="shortDivider">
+                <svg  width="1" height="48" viewBox="0 0 1 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="0.5" y1="2.18557e-08" x2="0.499998" y2="48" stroke="#D9DCE3"/>
+                </svg>
+            </div>
+            <button class="btn" type="submit" id="settleBtn" onclick="settleValue()">
+                <div class="form-inline">
+                <svg id="settleSvg" width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.5034 25C8.64894 25.001 5.00844 23.2236 2.6392 20.1825C0.270048 17.1415 -0.563052 13.1775 0.380398 9.43926C1.32472 5.70201 3.9399 2.60927 7.46914 1.05752C10.9974 -0.494232 15.0454 -0.331158 18.4369 1.49989C18.6381 1.60048 18.8363 1.71376 19.0316 1.83974C19.473 2.11122 19.6117 2.68837 19.3431 3.13174C19.2123 3.34659 19.0013 3.49991 18.7572 3.55849C18.5121 3.61708 18.2543 3.57509 18.0414 3.44325C17.8812 3.34853 17.7113 3.24501 17.5414 3.16006C14.5531 1.54873 10.9739 1.46476 7.91337 2.93252C4.85287 4.40126 2.67887 7.24501 2.06562 10.5838C1.45137 13.9235 2.47285 17.3543 4.81162 19.8143C7.15049 22.2752 10.5254 23.4675 13.8916 23.0243C17.2569 22.5799 20.2071 20.5526 21.8281 17.5703C23.4491 14.5879 23.5459 11.0088 22.0879 7.94326L12.9366 17.0945C12.7599 17.2722 12.5187 17.3728 12.2667 17.3728C12.0157 17.3728 11.7745 17.2722 11.5978 17.0945L7.82327 13.32C7.45804 12.9528 7.45804 12.3581 7.82327 11.9899C8.001 11.8112 8.24222 11.7116 8.49319 11.7116C8.74514 11.7116 8.98637 11.8112 9.16312 11.9899L12.2666 15.0944L21.6446 5.71644C21.8487 5.51136 22.1348 5.41174 22.422 5.44496C22.7081 5.47817 22.9649 5.64028 23.1163 5.88636C24.6925 8.42261 25.3096 11.4391 24.8565 14.3914C24.4024 17.3426 22.9073 20.0349 20.6418 21.9801C18.3761 23.9264 15.4895 24.9966 12.503 24.9996L12.5034 25Z" fill="white"/>
+                </svg>
+                <div class="btnText">Settle amount<div>
+                <div>
+            </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="nextScenario" class="modal">
+    <div class="modal-header">        
+        <div class="form-inline" id="modal-title">
+            <svg id="modal-svg" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.0043 39.9977C13.8375 39.9992 8.01304 37.1556 4.22247 32.2901C0.432052 27.4248 -0.90083 21.0828 0.608601 15.1019C2.11943 9.12269 6.30347 4.17458 11.9499 1.69193C17.5948 -0.790726 24.0712 -0.529821 29.4973 2.39969C29.8192 2.56061 30.1363 2.74185 30.4488 2.94341C31.155 3.37775 31.3769 4.30113 30.9472 5.01049C30.7379 5.35422 30.4004 5.59954 30.0097 5.69325C29.6176 5.787 29.2051 5.71981 28.8645 5.50889C28.6083 5.35733 28.3364 5.19172 28.0645 5.05579C23.2836 2.47783 17.5572 2.34347 12.6607 4.69175C7.76414 7.04161 4.28594 11.5913 3.3048 16.933C2.32206 22.2763 3.95632 27.7652 7.69814 31.701C11.4401 35.6382 16.8396 37.5458 22.2253 36.8367C27.6094 36.1258 32.3295 32.8822 34.9229 28.1108C37.5164 23.3393 37.6712 17.613 35.3386 12.7085L20.6974 27.3496C20.4146 27.634 20.0287 27.7949 19.6256 27.7949C19.2241 27.7949 18.8381 27.634 18.5553 27.3496L12.5165 21.3108C11.9322 20.7233 11.9322 19.7718 12.5165 19.1828C12.8009 18.8969 13.1868 18.7375 13.5883 18.7375C13.9914 18.7375 14.3773 18.8968 14.6601 19.1828L19.6254 24.1497L34.6294 9.14577C34.9559 8.81766 35.4137 8.65828 35.873 8.71143C36.3308 8.76455 36.7417 9.02391 36.9839 9.41763C39.5056 13.4754 40.493 18.3015 39.7681 23.0248C39.0416 27.7465 36.6495 32.0539 33.0249 35.1661C29.4001 38.28 24.7818 39.9922 20.0037 39.997L20.0043 39.9977Z" fill="#0C73E6"/>
+            </svg>
+            Completed
+        </div>
+    </div>
+    <div class="modal-content"></div>
+    <button class="btn" id="closeBtn" type="submit" onclick="nextScenario()"></button>
+</div>
+
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

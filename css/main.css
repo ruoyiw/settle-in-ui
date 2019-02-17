@@ -1,0 +1,214 @@
+.sidebar {
+    position: fixed;
+    width: 22%;
+    height: 1358px;
+    left: 0px;
+    top: 0px;
+    background-color: #EDF1F5;
+}
+.main {
+    margin-left: 22%;
+}
+.title {
+    position: absolute;
+    width: 672px;
+    height: 102px;
+    left: 24%;
+    top: 45px;
+    font-weight: 400;
+    line-height: 48px;
+    font-size: 72px;
+    letter-spacing: -0.01em;
+}
+.subtitle {
+    height: 10px;
+    margin-top: 30px;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+}
+.stepNo {
+    margin-left: 10%;
+    font-weight: 400;
+    margin-top: 45px;
+    font-size: 48px;
+    letter-spacing: -0.01em;
+    color: #9CA9B7;
+}
+.stepText {
+    width: 224px;
+    margin-top: 40px;
+    margin-left: 10%;
+    font-weight: 360;
+    line-height: 24px;
+    font-size: 18px;
+    letter-spacing: -0.01em;
+    color: #9CA9B7;
+}
+#step1 > .stepNo {
+    color: #0C73E6;;
+}
+#step1 > .stepText {
+    color: #15191D;
+}
+#step1Complete, #step2Complete, #step3Complete { 
+    margin-left: 27%;
+    font-weight: 800;
+    line-height: 21px;
+    font-size: 13px;
+}
+#completeSvg {
+    margin-right: 8px;
+}
+#scenario {
+    line-height: 50px;
+    font-size: 18px;
+    letter-spacing: -0.01em;
+    margin-top: 121px;
+    margin-bottom: 25%;
+    margin-left: 35px;
+    margin-right: 35px;
+}
+select {
+    width: auto !important;
+}
+input[type=number] {
+    width: 150px !important;
+}
+#sliderContainer {
+    position: fixed;
+    width: 70%;
+    height: 120px;
+    left: 24%;
+    top: 83%;
+    background: #FFFFFF;
+    box-shadow: 1px 2px 20px rgba(4, 26, 51, 0.16);
+    border-radius: 8px;
+}
+hr {
+    margin-top: 35px;
+    margin-bottom: 25px;
+    border: 1px solid #CED8E2;
+}
+#settleBtn {
+    position: absolute;
+    width: 16%;
+    height: 48px;
+    margin-top: -1.5%;
+    margin-left: 80%;
+    background: #0C73E6;
+    border-radius: 30px;
+    font-size: 1vw;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+    border: none;
+    padding-top: 2px;
+}
+.btnText{
+    text-align: center;
+    margin: auto;
+}
+#settleSvg {
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    margin-left: auto;
+}
+.slider {
+    position: absolute;
+    -webkit-appearance: none;
+    width: 48%!important;
+    height: 8px;
+    border-radius: 8px;
+    background: #EDF1F5;;
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #0C73E6;
+    cursor: pointer;
+    box-shadow: 0px 2px 12px rgba(12, 115, 230, 0.24);
+}
+#settleSlider {
+    margin-left: 13%;
+}
+.partyA {
+    position: absolute;
+    margin-left: 3%;
+    font-weight: 700;
+    line-height: 32px;
+    font-size: 0.8vw;
+    letter-spacing: 0.02em;
+}
+#partyAValue{
+    font-weight: 450;
+    line-height: 40px;
+    font-size: 2vw;
+    letter-spacing: -0.01em;
+}
+.partyB {
+    position: absolute;
+    margin-left: 64%;
+    font-weight: 700;
+    line-height: 32px;
+    font-size: 0.8vw;
+    letter-spacing: 0.02em;
+}
+#partyBValue{
+    font-weight: 450;
+    line-height: 40px;
+    font-size: 2vw;
+    letter-spacing: -0.01em;
+}
+.shortDivider {
+    position: absolute;
+    margin-left: 75%;
+    margin-top: -1.5%;
+}
+.modal {
+    width: 368px;
+    height: 328px;
+    background: #FFFFFF;
+    box-shadow: 1px 2px 20px rgba(4, 26, 51, 0.24);
+    border-radius: 8px;
+}
+.modal-header {
+    height: 85px;
+    font-weight: 400;
+    line-height: 48px;
+    font-size: 40px;
+    letter-spacing: -0.01em;
+}
+#modal-svg {
+    margin-right: 13px;
+}
+.modal-content {
+    margin-top: 20px;
+    line-height: 32px;
+    font-weight: 340;
+    font-size: 24px;
+    letter-spacing: -0.01em;
+    border: none;
+}
+#closeBtn {
+    position: absolute;
+    width: 160px;
+    height: 48px;
+    margin-top: 40px;
+    background: #0C73E6;
+    border-radius: 30px;
+    font-weight: 400;
+    line-height: 32px;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+    border: none;
+}

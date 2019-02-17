@@ -1,0 +1,112 @@
+.sidebar {
+    position: fixed;
+    width: 2%;
+    height: 1358px;
+    left: 0px;
+    top: 0px;
+    background-color: #EDF1F5;
+}
+.main {
+    margin-left: 2%;
+    width: 55%;
+}
+.title {
+    width: 672px;
+    height: 102px;
+    margin-left: 15%;
+    margin-top: 15%;
+    font-weight: 400;
+    line-height: 48px;
+    font-size: 72px;
+    letter-spacing: -0.01em;
+}
+.subtitle {
+    width: 672px;
+    height: 41px;
+    margin-left: 15%;
+    margin-top: -2%;
+    line-height: 48px;
+    font-size: 32px;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    color: #2E353D;
+}
+hr {
+    margin-top: 50px;
+    border: 1px solid #E6EBF0;
+    width: 760px;
+    margin-left: 0px;
+} 
+.introduction {
+    margin-left: 15%;
+    line-height: 32px;
+    font-size: 18px;
+    letter-spacing: -0.01em;
+}
+.device1 {
+    position: absolute;
+    width: 362.16px;
+    height: 715px;
+    left: 65%; 
+    top: 0; 
+    bottom: 0;
+    margin: auto;
+}
+.device2 {
+    position: absolute;
+    width: 362.16px;
+    height: 715px;
+    left: 65%;
+    top: 0; 
+    bottom: 0;
+    margin: auto;
+}
+.btn {
+    width: 190px;
+    height: 48px;
+    left: 149px;
+    margin-top: 15%;
+    background: #0C73E6;
+    border-radius: 30px;
+    font-weight: 350;
+    line-height: 32px;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+}
+#name, #email, #organisation, #role {
+    width: 94%;
+    height: 40px;
+    border-radius: 4px;
+}
+.name, .email, .organisation, .role {
+    margin-top: 2%;
+    font-weight: 700;
+    line-height: 24px;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+}
+
+.organisation, .role {
+    margin-top: 1%;
+}
+/* .email {
+    margin-left: 345px;
+}
+.role {
+    margin-left: 275px;;
+} */
+.emailWarning {
+    color: red;
+}
+.contact {
+    margin-top: 7%;
+}
+#logo {
+    margin-top: 10%;
+}
+#portable {
+    margin-left: 15%;
+}
+

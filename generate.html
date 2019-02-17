@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Generate New Scenario</title>
+    <link href="https://uploads-ssl.webflow.com/5b72c72379ce4e6d1872328d/5b7b5de9e41359291291d3fb_stl.png" rel="shortcut icon" type="image/x-icon">    
+    <link href="https://uploads-ssl.webflow.com/5b72c72379ce4e6d1872328d/5b7b5e4cbbb60bce2593d74e_stl_app.png" rel="apple-touch-icon">   
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.2.0/bootstrap-slider.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.2.0/css/bootstrap-slider.min.css" />
+    <style>
+        body {
+            font-family: 'Arial';
+            line-height: 2.5em;
+        }
+        #scenarioId {
+            color: #CCC;
+            font-size: 0.8em;
+        }
+        #nameAlert, #idAlert {
+            color: red;
+            font-size: 0.8em;
+        }
+        select {
+            width: auto !important;
+        }
+        input {
+            width: auto !important;
+        }
+        #ex1Slider .slider-selection {
+            background: #BABABA;
+        }
+        #sliderContainer {
+            margin-top: 8%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="row form-inline justify-content-center" id="title">
+    <h1>settle in <input class="form-control" type="text" placeholder="name" id="name" /></h1>
+</div>
+
+<div class="row form-inline justify-content-center">
+    <div class="col-3">
+      <select class="form-control" id="idList"></select>
+    </div>
+    <div class="col-1">
+      <button class="btn btn-primary" type="submit" id="searchScenario" onclick="searchScenario()">search</button>
+    </div>
+</div>
+<br />
+<div class="container text-justify col-7">
+    <div class="form-inline">
+        <p>
+            Party A and Party B have <select class="form-control scenario-input" id="children"></select>. 
+            The children are between the ages of <select class="form-control scenario-input" id="children_age"></select>.
+            Party A and Party B were together for <input class="form-control scenario-input" type="number" min="1" max="25" step="1" value="5" id="duration" /> years and separated six months ago.
+            Their combined assets net total $<input class="form-control scenario-input" type="number" min="50000" max="500000" step="5000" value="50000" id="total_assets" />.
+        </p>
+        <p>
+            Party A is <input class="form-control scenario-input" type="number" min="20" max="75" step="5" value="40" id="age_a" /> years old and is in <select class="form-control scenario-input" id="health_a"></select> health.
+            They take in a total of <input class="form-control scenario-input" type="number" min="0" max="250000" step="5000" value="50000" id="income_a" /> per year from work and/or government benefit payments and has <input class="form-control scenario-input" type="number" min="0" max="1000000" step="10000" value="40000" id="super_a" /> in superannuation.
+            During their relationship, they brought <input class="form-control scenario-input" type="number" min="0" max="1000000" step="10000" value="10000" id="prior_a" /> into the relationship, including pre-owned assets, gifts, and payments. 
+            They have <select class="form-control scenario-input" id="dependent_a"></select> who require <select class="form-control scenario-input" id="financial_assis_a"></select> financial assistance. 
+        </p>
+        <p>
+            Party B is <input class="form-control scenario-input" type="number" min="20" max="75" step="5" value="40" id="age_b" /> years old and is in <select class="form-control scenario-input" id="health_b"></select> health.
+            They takes in a total of <input class="form-control scenario-input" type="number" min="0" max="250000" step="5000" value="50000" id="income_b" /> per year from work and/or government benefit payments and has <input class="form-control scenario-input" type="number" min="0" max="1000000" step="10000" value="40000" id="super_b" /> in superannuation.
+            During their relationship, they brought <input class="form-control scenario-input" type="number" min="0" max="1000000" step="10000" value="10000" id="prior_b" /> into the relationship, including pre-owned assets, gifts, and payments. 
+            They have <select class="form-control scenario-input" id="dependent_b"></select> who require <select class="form-control scenario-input" id="financial_assis_b"></select> financial assistance. 
+        </p>
+        <p>
+            They've already decided that Party A will have <input class="form-control scenario-input" type="number" min="0" max="100" step="5" value="40" id="resp_a" />% and Party B <input class="form-control scenario-input" type="number" min="0" max="100" step="5" value="40" id="resp_b" />% of the childcare responsibilities
+            and <select class="form-control scenario-input" id="support_name"></select> will <select class="form-control scenario-input" id="support_result"></select> child support.
+        </p>
+    </div>
+    <div class="row justify-content-center">
+    <div class="col-3">
+        <button class="btn btn-primary" type="submit" id="saveScenario" onclick="saveScenario()">save this scenario</button>
+    </div>
+    <div class="col-3">
+       <button class="btn btn-secondary" type="submit" id="generateScenario" onclick="generate()">generate new scenario</button>
+    </div>
+    </div>
+
+    <div id="scenarioId"></div>
+</div>
+
+<script>
+
+// Endpoints path
+var appUrl = 'https://ho1k9awhxg.execute-api.us-east-1.amazonaws.com/dev';
+
+var values = {
+    children: false,
+    children_age: false,
+    duration: false,
+    total_assets: false,
+    age_a: false,
+    health_a: false,
+    income_a: false,
+    super_a: false,
+    prior_a: false,
+    dependent_a: false,
+    financial_assis_a: false,
+    age_b: false,
+    health_b: false,
+    income_b: false,
+    super_b: false,
+    prior_b: false,
+    dependent_b: false,
+    financial_assis_b: false,
+    resp_a: false,
+    resp_b: false,
+    support_name: false,
+    support_result: false,
+}
+
+var settlement = {
+    id: false,
+    name: false,
+    value: false
+}
+
+var fields = {
+    children: {
+        "0": "no children",
+        "1": "1 child",
+        "2": "2 children",
+        "3": "3 children",
+        "4": "4 children",
+        "5": "5 children",
+        "6": "6 children",
+        "7": "7 children",
+        "8": "8 children",
+        "9": "9 children",
+        "10": "10 or more children"
+    },
+    children_age : {
+        "0": "NA",
+        "1": "1-5",
+        "2": "6-10",
+        "3": "11-15",
+        "4": "16-18"
+    },
+    dependent_a: {
+        "0": "no dependents",
+        "1": "at least one dependent",
+    },
+    dependent_b: {
+        "0": "no dependents",
+        "1": "at least one dependent",
+    },
+    financial_assis_a: {
+        "0": "none",
+        "1": "some",
+        "2": "a significant amount"
+    },
+    financial_assis_b: {
+        "0": "none",
+        "1": "some",
+        "2": "a significant amount"
+    },
+    health_a: {
+        "0": "poor",
+        "1": "good"
+    },
+    health_b: {
+        "0": "poor",
+        "1": "good"
+    },
+    support_name: {
+        "0": "Party A",
+        "1": "Party B",
+    },
+    support_result: {
+        "0": "pay",
+        "1": "not pay",
+    }
+};
+
+var unsettledScenarios = false;
+var scenarioId = false;
+
+/*
+* Generate value for each field in the scenario
+*/
+function generate() {
+    // values.parents = randomChoice([0, 1]);
+    // selectChoice('parents', values.parents);
+    values.children = randomChoice([0, 0, 0, 0, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 4, 5, 6, 7, 8]);
+    selectChoice('children', values.children);
+    values.health_a = randomChoice([0, 1]);
+    selectChoice('health_a', values.health_a);
+    values.health_b = randomChoice([0, 1]);
+    selectChoice('health_b', values.health_b);
+    values.dependent_a = randomChoice([0, 1]);
+    selectChoice('dependent_a', values.dependent_a);
+    values.dependent_b = randomChoice([0, 1]);
+    selectChoice('dependent_b', values.dependent_b);
+    values.financial_assis_a = randomChoice([0, 1, 2]);
+    values.financial_assis_b = randomChoice([0, 1, 2]);
+    values.resp_a = randomChoice([0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]);
+    values.resp_b = randomChoice([0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]);
+    values.support_name = randomChoice([0, 1]);
+    selectChoice('support_name', values.support_name);
+    values.support_result = randomChoice([0, 1]);
+
+    // If the family has children, divide their responsibility from 0% to 100%
+    // otherwise, both of their responsibilities will be 0% and they will not pay child support
+    // and the time off for childcare is always 0 months 
+    if (values.children > 0) {
+        values.children_age = randomChoice([1, 2, 3, 4]);
+        values.resp_a = 100 - values.resp_b;
+    } else {
+        values.children_age = 0;
+        values.resp_a = 0;
+        values.resp_b = 0;
+        values.support_result = 1;
+    }
+    selectChoice('children_age', values.children_age);
+    selectChoice('resp_a', values.resp_a);
+    selectChoice('resp_b', values.resp_b);
+    selectChoice('support_result', values.support_result);
+
+    if (values.dependent_a === 0) {
+        values.financial_assis_a = 0;
+    }
+    selectChoice('financial_assis_a', values.financial_assis_a);
+
+    if (values.dependent_b === 0) {
+        values.financial_assis_b = 0;
+    }
+    selectChoice('financial_assis_b', values.financial_assis_b);
+
+    values.duration = randomChoice([1, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15, 16, 17, 18, 19, 20]);
+    selectChoice('duration', values.duration);
+    var ages = [];
+    for (var i = 20; i <= 75; i+=5) {
+        if (i > 20 + values.duration) {
+            ages.push(i);
+        }
+    }
+    values.age_a = randomChoice(ages);
+    selectChoice('age_a', values.age_a);
+    values.age_b = randomChoice(ages);
+    selectChoice('age_b', values.age_b);
+    values.total_assets = randomChoice([50000, 60000, 80000, 100000, 125000, 150000, 200000, 250000, 300000, 400000, 500000]);
+    selectChoice('total_assets', values.total_assets);
+    values.prior_a = randomChoice([0, 10000, 20000, 30000, 50000, 60000, 80000, 100000, 120000, 150000, 200000, 250000, 300000, 400000, 500000, 750000, 1000000]);
+    selectChoice('prior_a', values.prior_a);
+    values.prior_b = randomChoice([0, 10000, 20000, 30000, 50000, 60000, 80000, 100000, 120000, 150000, 200000, 250000, 300000, 400000, 500000, 750000, 1000000]);
+    selectChoice('prior_b', values.prior_b);
+    values.income_a = randomChoice([0, 10000, 20000, 30000, 50000, 60000, 80000, 100000, 120000, 150000, 200000, 250000]);
+    selectChoice('income_a', values.income_a);
+    values.income_b = randomChoice([0, 10000, 20000, 30000, 50000, 60000, 80000, 100000, 120000, 150000, 200000, 250000]);
+    selectChoice('income_b', values.income_b);
+    values.super_a = randomChoice([0, 10000, 20000, 30000, 50000, 60000, 80000, 100000, 120000, 150000, 200000, 250000]);
+    selectChoice('super_a', values.super_a);
+    values.super_b = randomChoice([0, 10000, 20000, 30000, 50000, 60000, 80000, 100000, 120000, 150000, 200000, 250000]);
+    selectChoice('super_b', values.super_b);
+    console.log(values);
+    // Once generate a new scenario, remove the scenario ID and all warnings
+    scenarioId = false;
+    $('#scenarioId').html('');
+}
+
+/*
+* Randomly choose an element from array
+*/
+function randomChoice(choices) {
+    return choices[Math.floor(Math.random()*choices.length)];
+}
+
+/*
+* Select the value for the element
+*/
+function selectChoice(selectId, choice) {
+    $("#" + selectId).val(choice);
+}
+
+/*
+* List all options from the fields variable
+*/
+function populateOptions() {
+    $.each(fields, function(field, options) {
+        var o = $('select#' + field).prop('options');
+        $.each(options, function(val, text) {
+            o[o.length] = new Option(text, val);
+        });
+    });
+}
+
+/*
+* Save the scenario body
+*/
+function saveScenario() {
+    $.each(values, function(valueName) {
+       values[valueName] = $('#' + valueName).val();
+    });
+    $.ajax({
+        contentType: 'application/json',
+        data: JSON.stringify({ values }),
+        dataType: 'json',
+        success: function(data){
+            console.log("Created new scenario.", data);
+            scenarioId = data['id'];
+            $('#scenarioId').html(scenarioId);
+            $('#idAlert').html('');
+            getUnsettledScenarios();
+        },
+        error: function(){
+            console.log("Failed to save scenario");
+        },
+        processData: false,
+        type: 'POST',
+        url: appUrl + '/create'
+    });
+}
+
+/*
+* Settle the value
+*/
+function settleValue() {
+    settlement.id = $('#scenarioId').html();
+    settlement.name = $('#name').val();
+    settlement.value = $('#settleSlider').val();
+    console.log(settlement)
+    if (!settlement.id) {
+        $('span[id^="idAlert"]').remove();
+        $('#settleSlider').after('<span id="idAlert">Please save the senario.</span>');
+    } else if (!settlement.name) {
+        $('span[id^="nameAlert"]').remove();
+        $('#settleSlider').after('<span id="nameAlert">Please input your name.</span>');
+    } else {
+        $.ajax({
+            contentType: 'application/json',
+            data: JSON.stringify(settlement),
+            dataType: 'json',
+            success: function(data){
+                console.log("settle the value.", data);
+                $('#idAlert').html('');
+                $('#nameAlert').html('');
+                getUnsettledScenarios();
+            },
+            error: function(){
+                console.log("Failed to settle value");
+            },
+            processData: false,
+            type: 'POST',
+            url: appUrl + '/settle'
+        });
+    }
+}
+
+/*
+* Get all scenario ID as a list
+*/
+function getAllScenarios() {
+     $.ajax({
+        contentType: 'application/json',
+        dataType: 'json',
+        success: function(data){
+            console.log("get all scenarios successfually", data);
+            unsettledScenarios = data;
+            updateIdList(data);
+        },
+        error: function(){
+            console.log("Failed to get scenario");
+        },
+        processData: false,
+        type: 'GET',
+        url: appUrl + '/scenario/list'
+    });
+}
+
+/*
+* Search the scenario based on the selected scenaria ID
+*/
+function searchScenario() {
+    $.each(unsettledScenarios, function(key, value) {
+        if (value.id === unsettledScenarios[$('#idList').val()].id) {
+            var scenario = unsettledScenarios[$('#idList').val()];
+            console.log(scenario)
+            $.each(scenario, function(selectId, value) {
+                selectChoice(selectId, value)
+            });
+            $('#scenarioId').html(scenario.id);
+        }
+    });
+}
+
+/*
+* Update the scenario ID list
+*/
+function updateIdList(data) {
+    $('#idList').html('');
+    $.each(data, function(key, value) {
+        $('#idList').append($("<option></option>")
+            .attr("value", key)
+            .text(value.id));
+    });
+}
+
+/*
+* When one of the input field changes, a new scenario will be generated.
+*/
+$('.scenario-input').on('input',function(e){
+    scenarioId = false;
+    $('#scenarioId').html('');
+});
+
+/*
+* When user input the name, get the all scenarios that name hasn't settled
+*/
+$('#name').on('input',function(e){
+    getUnsettledScenarios();
+});
+
+/*
+* If the name is not empty, return all unsettled scenario IDs of that name and update the ID list
+* Otherwise, return all scenario IDs and update the ID list
+*/
+function getUnsettledScenarios() {
+    if ($('#name').val()) {
+        $.ajax({
+            contentType: 'application/json',
+            dataType: 'json',
+            success: function(data){
+                console.log($('#name').val())
+                unsettledScenarios = data;
+                updateIdList(data);
+                console.log("get unsettled scenarios", $('#idList').html());
+            },
+            error: function(){
+                console.log("Failed to get scenario");
+            },
+            processData: false,
+            type: 'GET',
+            url: appUrl + '/scenario/list/not/'+ $('#name').val()
+        });
+    } else {
+        getAllScenarios();
+        console.log("get all scenarios", $('#idList').html());
+    }
+}
+
+
+/*
+* Reads a cookie
+*/
+function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0) === ' ') {
+            c = c.substring(1,c.length);
+        }
+        if (c.indexOf(nameEQ) === 0) {
+            return c.substring(nameEQ.length,c.length);
+        }
+    }
+    return null;
+}
+
+
+$(document).ready(function() {
+    getAllScenarios();
+    populateOptions();
+    generate();
+});
+
+</script>
+
+</body>
+</html>
